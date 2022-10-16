@@ -6,15 +6,23 @@ if (!localStorage.getItem("ascore")) {
   localStorage.setItem("ascore", 0);
 }
 
+if (!localStorage.getItem("foulsH")) {
+  localStorage.setItem("foulsH", 0);
+}
+
+if (!localStorage.getItem("foulsA")) {
+  localStorage.setItem("foulsA", 0);
+}
+
+
 if (!localStorage.getItem("periodn")) {
   localStorage.setItem("periodn", 1);
 }
 
 let periodn = localStorage.getItem("periodn");
-let min = 9;
-let sec = 59;
+let min = 0;
+let sec = 05;
 let timers = -1;
-
 
 function play() {
   if (timers == -1) {
@@ -26,6 +34,8 @@ function play() {
       sec = sec <= 9 ? "0" + sec : sec;
       if (periodn < 4 && sec == 0 && min == 0) {
         periodn++;
+        localStorage.setItem("foulsH", 0);
+        localStorage.setItem("foulsA", 0);
         document.getElementById("pNum").innerHTML = periodn;
         localStorage.setItem("periodn", periodn);
         location.reload();
@@ -47,10 +57,6 @@ function play() {
     timers = -1;
   }
 }
-
-let hscore = localStorage.getItem("hscore");
-let ascore = localStorage.getItem("ascore");
-
 
 function hscore1() {
   hscore++;
@@ -88,24 +94,45 @@ function ascore3() {
   localStorage.setItem("ascore", ascore);
 }
 
+let foulsH = localStorage.getItem("foulsH")
+let foulsA = localStorage.getItem("foulsA")
+
+function addFoulH() {
+  foulsH < 5 ? foulsH++ : foulsH;
+  document.querySelector("#foulsHomeN").innerHTML = foulsH;
+  localStorage.setItem("foulsH", foulsH);
+}
+
+function addFoulA() {
+  foulsA < 5 ? foulsA++ : foulsA + 0;
+  document.querySelector("#foulsAwayN").innerHTML = foulsA;
+  localStorage.setItem("foulsA", foulsA);
+}
+
 function resetScore() {
   document.getElementById("pNum").innerHTML = 1;
   document.getElementById("home").innerHTML = 0;
   document.getElementById("away").innerHTML = 0;
   document.getElementById("time").innerHTML = "10:00";
+  document.querySelector("#foulsHomeN").innerHTML = 0;
+  document.querySelector("#foulsAwayN").innerHTML = 0;
   min = 10;
   sec = 0;
   periodn = 1;
   hscore = 0;
   ascore = 0;
+  foulsH = 0;
+  foulsA = 0;
   localStorage.setItem("periodn", periodn);
   localStorage.setItem("hscore", hscore);
   localStorage.setItem("ascore", ascore);
+  localStorage.setItem("foulsH", foulsH);
+  localStorage.setItem("foulsA", foulsA);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("pNum").innerHTML = localStorage.getItem("periodn");
-  document.getElementById("playIcon").onclick = play;
+  document.getElementById("playTime").onclick = play;
   document.getElementById("home").innerHTML = localStorage.getItem("hscore");
   document.getElementById("home1").onclick = hscore1;
   document.getElementById("home2").onclick = hscore2;
@@ -114,5 +141,9 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("away1").onclick = ascore1;
   document.getElementById("away2").onclick = ascore2;
   document.getElementById("away3").onclick = ascore3;
-  document.getElementById("resetScore").ondblclick = resetScore;
+  document.querySelector("#foulsHomeN").innerHTML = localStorage.getItem("foulsH")
+  document.querySelector("#foulsHadd").onclick = addFoulH;
+  document.querySelector("#foulsAwayN").innerHTML = localStorage.getItem("foulsA")
+  document.querySelector("#foulsAadd").onclick = addFoulA;
+  document.getElementById("resetScore").onclick = resetScore;
 });

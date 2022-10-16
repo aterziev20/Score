@@ -1,7 +1,7 @@
 body {
   display: flex;
   justify-content: center;
-  margin: 150px;
+  margin: 100px;
   background-image: url(images/jordan.png);
   background-position: center;
   background-repeat: no-repeat;
@@ -13,8 +13,8 @@ body {
   text-align: center;
   justify-content: space-around;
   position: relative;
-  width: 720px;
-  height: 385px;
+  width: 1080px;
+  height: 500px;
   margin-right: 45%;
   margin-left: 10%;
 
@@ -25,10 +25,41 @@ body {
   margin-top: 60px;
   font-family: "Verdana";
   font-weight: 700;
-  font-size: 40px;
+  font-size: 50px;
   line-height: 36px;
 
   color: #fdf0d5;
+}
+
+#time {
+  display: flex;
+  margin-top: 15px;
+
+  font-family: "Cursed Timer ULiL", sans-serif;
+  font-weight: 700;
+  font-size: 90px;
+
+  color: #ffc300;
+  background: #080001;
+  border: 1px solid #080001;
+  border-radius: 5px;
+  padding: 20px 10px 0px 8px;
+  /*text-shadow: white 0px -5px 0px;*/
+}
+
+#playTime {
+  margin: 10px 0px 0px 10px;
+  font-size: 30px;
+  border: none;
+  background: transparent;
+  color: #ffd60a;
+  cursor: pointer;
+}
+
+#playTime::after {
+  content: "\f28b";
+  margin: 10px 0px 0px 10px;
+  font-size: 30px;
 }
 
 #home {
@@ -40,28 +71,45 @@ body {
   color: #ffc300;
 }
 
-#playIcon {
-  margin: 10px 0px 0px 10px;
-  font-size: 30px;
-  border: none;
-  background: transparent;
-  color: #ffd60a;
-  cursor: pointer;
-}
-
-#playIcon::after {
-  content: "\f28b";
-  margin: 10px 0px 0px 10px;
-  font-size: 30px;
-}
-
-#hb {
+#BckgH {
   width: 195px;
   height: 120px;
   left: 82px;
   top: 125px;
   padding: 10px 20px 0px 0px;
   margin: auto 20px;
+
+  background: #080001;
+  border-radius: 5px;
+}
+
+
+.foulsName {
+  display: flex;
+  justify-content: center;
+  margin: 5% 0% 2% 0%;
+  
+  font-family: "Verdana";
+  font-weight: 700;
+  font-size: 20px;
+
+  color: #fdf0d5;
+}
+
+.foulsNumber {
+  display: flex;
+  justify-content: center;
+  margin: auto 40%;
+  
+  padding: 10px 10px 0px 10px;
+
+  font-family: "Cursed Timer ULiL", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 60px;
+  text-align: center;
+  color: #ffc300;
 
   background: #080001;
   border-radius: 5px;
@@ -82,7 +130,7 @@ body {
   color: #ffc300;
 }
 
-#ab {
+#BckgA {
   width: 195px;
   height: 120px;
   left: 337px;
@@ -92,34 +140,6 @@ body {
 
   background: #080001;
   border-radius: 5px;
-}
-
-#pNum {
-  display: inline-block;
-  padding: 10px 10px 0px 10px;
-
-  font-family: "Cursed Timer ULiL", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 50px;
-  line-height: 60px;
-  text-align: center;
-  color: #ffc300;
-
-  background: #080001;
-  border-radius: 5px;
-}
-
-#period {
-  display: flex;
-  justify-content: center;
-  margin: 10px auto;
-
-  font-family: "Verdana";
-  font-weight: 700;
-  font-size: 20px;
-
-  color: #fdf0d5;
 }
 
 .point {
@@ -141,6 +161,67 @@ body {
   cursor: pointer;
 }
 
+#attack {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 10px auto;
+
+  font-family: "Cursed Timer ULiL", sans-serif;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 60px;
+  width: 100px;
+
+  color: #ffc300;
+
+  background: #080001;
+  padding-top: 10px;
+  border-radius: 5px;
+}
+
+#playAttack {
+  margin: 0px 0px 0px 10px;
+  font-size: 20px;
+  border: none;
+  background: transparent;
+  color: #ffd60a;
+  cursor: pointer;
+}
+
+#playAttack::after {
+  content: "\f28b";
+  margin: 10px 0px 0px 10px;
+  font-size: 20px;
+}
+
+#pNum {
+  display: inline-block;
+  padding: 10px 10px 0px 10px;
+
+  font-family: "Cursed Timer ULiL", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 60px;
+  text-align: center;
+  color: #ffc300;
+
+  background: #080001;
+  border-radius: 5px;
+}
+
+#period {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 5px auto;
+
+  font-family: "Verdana";
+  font-weight: 700;
+  font-size: 20px;
+
+  color: #fdf0d5;
+}
+
 #resetScore {
   display: flex;
   text-align: center;
@@ -155,40 +236,6 @@ body {
   background: transparent;
   border: none;
   cursor: pointer;
-}
-
-#time {
-  display: flex;
-  margin: 15px auto;
-
-  font-family: "Cursed Timer ULiL", sans-serif;
-  font-weight: 700;
-  font-size: 50px;
-
-  color: #ffc300;
-  background: #080001;
-  border: 1px solid #080001;
-  border-radius: 5px;
-  padding: 10px 10px 0px 8px;
-  /*text-shadow: white 0px -5px 0px;*/
-}
-
-#attack {
-  display: flex;
-  justify-content: center;
-  margin: 20px auto;
-
-  font-family: "Cursed Timer ULiL", sans-serif;
-  font-weight: 400;
-  font-size: 50px;
-  line-height: 60px;
-  width: 100px;
-
-  color: #ffc300;
-
-  background: #080001;
-  padding: 10px 0 0 0;
-  border-radius: 5px;
 }
 
 @media (max-width: 960px) {

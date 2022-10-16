@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="styles.css">
     <link href="http://fonts.cdnfonts.com/css/cursed-timer-ulil" rel="stylesheet">
     <script src="https://kit.fontawesome.com/e72a926d88.js" crossorigin="anonymous"></script>
@@ -14,7 +14,7 @@
     <div class="container">
         <div>
             <h3 class="team">HOME</h3>
-            <div id="hb">
+            <div id="BckgH">
                 <span id="home">0</span>
             </div>
             <div>
@@ -22,24 +22,35 @@
                 <button class="point" id="home2">+2</button>
                 <button class="point" id="home3">+3</button>
             </div>
+            <div>
+                <span class="foulsName" id="foulsHome">Fouls</span>
+                <span class="foulsNumber"id="foulsHomeN">0</span>
+                <button class="point" id="foulsHadd">+</button>
+            </div>
         </div>
         <div>
-            <i class="fa-regular fa-circle-play active" id="playIcon"></i>
             <span id="time">10:00</span>
+            <i class="fa-regular fa-circle-play active" id="playTime"></i>
             <span id="attack">24</span>
+            <i class="fa-regular fa-circle-play active" id="playAttack"></i>
             <span id="period">Period</span>
             <span id="pNum">1</span>
             <button id="resetScore">Reset</button>
         </div>
         <div>
             <h3 class="team">GUEST</h3>
-            <div id="ab">
+            <div id="BckgA">
                 <span id="away">0</span>
             </div>
             <div>
                 <button class="point" id="away1">+1</button>
                 <button class="point" id="away2">+2</button>
                 <button class="point" id="away3">+3</button>
+            </div>
+            <div>
+                <span class="foulsName" id="foulsAway">Fouls</span>
+                <span class="foulsNumber" id="foulsAwayN">0</span>
+                <button class="point" id="foulsAadd">+</button>
             </div>
         </div>
     </div>
