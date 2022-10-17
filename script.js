@@ -46,7 +46,14 @@ function play() {
         min = 10;
         sec = 0 + "0";
       } else if (periodn >= 4 && sec == 0 && min == 0) {
-        alert("Game Over!");
+        if (hscore > ascore) {
+          alert(`Home team wins ${hscore} to ${ascore}!`);
+        }
+        else if (hscore < ascore) {
+          alert(`Away team wins ${hscore} to ${ascore}!`);
+        } else {
+          alert(`Wow! Tie game with ${hscore} to ${ascore}!`);
+        }
         location.reload();
       }
       document.querySelector("#time").innerHTML = time;
