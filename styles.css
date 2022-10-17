@@ -31,37 +31,6 @@ body {
   color: #fdf0d5;
 }
 
-#time {
-  display: flex;
-  margin-top: 15px;
-
-  font-family: "Cursed Timer ULiL", sans-serif;
-  font-weight: 700;
-  font-size: 90px;
-
-  color: #ffc300;
-  background: #080001;
-  border: 1px solid #080001;
-  border-radius: 5px;
-  padding: 20px 10px 0px 8px;
-  /*text-shadow: white 0px -5px 0px;*/
-}
-
-#playTime {
-  margin: 10px 0px 0px 10px;
-  font-size: 30px;
-  border: none;
-  background: transparent;
-  color: #ffd60a;
-  cursor: pointer;
-}
-
-#playTime::after {
-  content: "\f28b";
-  margin: 10px 0px 0px 10px;
-  font-size: 30px;
-}
-
 #home {
   font-family: "Cursed Timer ULiL", sans-serif;
   font-weight: 400;
@@ -78,38 +47,6 @@ body {
   top: 125px;
   padding: 10px 20px 0px 0px;
   margin: auto 20px;
-
-  background: #080001;
-  border-radius: 5px;
-}
-
-
-.foulsName {
-  display: flex;
-  justify-content: center;
-  margin: 5% 0% 2% 0%;
-  
-  font-family: "Verdana";
-  font-weight: 700;
-  font-size: 20px;
-
-  color: #fdf0d5;
-}
-
-.foulsNumber {
-  display: flex;
-  justify-content: center;
-  margin: auto 40%;
-  
-  padding: 10px 10px 0px 10px;
-
-  font-family: "Cursed Timer ULiL", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 50px;
-  line-height: 60px;
-  text-align: center;
-  color: #ffc300;
 
   background: #080001;
   border-radius: 5px;
@@ -161,10 +98,63 @@ body {
   cursor: pointer;
 }
 
+#time {
+  display: flex;
+  margin-top: 15px;
+
+  font-family: "Cursed Timer ULiL", sans-serif;
+  font-weight: 700;
+  font-size: 90px;
+
+  color: #ffc300;
+  background: #080001;
+  border: 1px solid #080001;
+  border-radius: 5px;
+  padding: 20px 10px 0px 8px;
+  /*text-shadow: white 0px -5px 0px;*/
+}
+
+#playTime {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  font-size: 30px;
+  border: none;
+  background: transparent;
+  color: #ffd60a;
+  cursor: pointer;
+}
+
+#playTime::after {
+  content: "\f28b";
+  margin-left: 10px;
+  font-size: 30px;
+}
+
+.attackBtn {
+  display: inline;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 3px;
+  padding-top: 3px;
+
+  font-family: "Cursed Timer ULiL", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #fdf0d5;
+
+  border: 2px solid #fdf0d5;
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 #attack {
   display: flex;
   justify-content: center;
-  margin: 20px auto 10px auto;
+  margin: 10px auto 10px auto;
 
   font-family: "Cursed Timer ULiL", sans-serif;
   font-weight: 400;
@@ -180,7 +170,8 @@ body {
 }
 
 #playAttack {
-  margin: 0px 0px 0px 10px;
+  display: inline-block;
+  justify-content: center;
   font-size: 20px;
   border: none;
   background: transparent;
@@ -190,8 +181,39 @@ body {
 
 #playAttack::after {
   content: "\f28b";
-  margin: 10px 0px 0px 10px;
+  margin-left: 10px;
   font-size: 20px;
+}
+
+.foulsName {
+  display: flex;
+  justify-content: center;
+  margin: 5% 0% 2% 0%;
+
+  font-family: "Verdana";
+  font-weight: 700;
+  font-size: 20px;
+
+  color: #fdf0d5;
+}
+
+.foulsNumber {
+  display: flex;
+  justify-content: center;
+  margin: auto 40%;
+
+  padding: 10px 10px 0px 10px;
+
+  font-family: "Cursed Timer ULiL", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 60px;
+  text-align: center;
+  color: #ffc300;
+
+  background: #080001;
+  border-radius: 5px;
 }
 
 #pNum {
@@ -226,7 +248,7 @@ body {
   display: flex;
   text-align: center;
   justify-content: center;
-  margin: 20px auto;
+  margin: 10px auto;
 
   font-family: "Verdana";
   font-weight: 700;
@@ -257,7 +279,7 @@ body {
     line-height: 18px;
   }
 
-  #hb {
+  #BckgH {
     width: 90px;
     height: 60px;
     left: 41px;
@@ -266,7 +288,7 @@ body {
     margin: auto 10px;
   }
 
-  #ab {
+  #BckgA {
     width: 90px;
     height: 60px;
     left: 170px;
@@ -281,12 +303,12 @@ body {
     line-height: 60px;
   }
 
-  #playIcon {
+  #playTime {
     margin: 5px 0px 0px 5px;
     font-size: 15px;
   }
 
-  #playIcon::after {
+  #playTime::after {
     content: "\f28b";
     margin: 5px 0px 0px 5px;
     font-size: 15px;
