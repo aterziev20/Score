@@ -23,11 +23,16 @@ if (!localStorage.getItem("shotClock")) {
 }
 
 let periodn = localStorage.getItem("periodn");
-let min = 9;
-let sec = 59;
+let min = 0;
+let sec = 05;
 let timers = -1;
 
 function play() {
+  if (document.getElementById("playTime").innerHTML != "Stop") {
+    document.getElementById("playTime").innerHTML = "Stop";
+  } else if (document.getElementById("playTime").innerHTML != "Start") {
+    document.getElementById("playTime").innerHTML = "Start";
+  }
   if (timers == -1) {
     timers = setInterval(function () {
       if (sec < 0) {
@@ -48,8 +53,7 @@ function play() {
       } else if (periodn >= 4 && sec == 0 && min == 0) {
         if (hscore > ascore) {
           alert(`Home team wins ${hscore} to ${ascore}!`);
-        }
-        else if (hscore < ascore) {
+        } else if (hscore < ascore) {
           alert(`Away team wins ${hscore} to ${ascore}!`);
         } else {
           alert(`Wow! Tie game with ${hscore} to ${ascore}!`);
@@ -75,6 +79,11 @@ let timerAttack = -1;
 let alerted = "";
 
 function attack() {
+  if (document.getElementById("playAttack").innerHTML != "Stop") {
+    document.getElementById("playAttack").innerHTML = "Stop";
+  } else if (document.getElementById("playAttack").innerHTML != "Start") {
+    document.getElementById("playAttack").innerHTML = "Start";
+  }
   if (timerAttack == -1) {
     timerAttack = setInterval(function () {
       if (shotClock > 0) {
@@ -85,8 +94,9 @@ function attack() {
         alerted = "yes";
         clearInterval(timerAttack);
         timerAttack = -1;
-      }      
-      document.querySelector("#attack").innerHTML = shotClock <= 9 ? "0" + shotClock : shotClock;
+      }
+      document.querySelector("#attack").innerHTML =
+        shotClock <= 9 ? "0" + shotClock : shotClock;
     }, 1000);
   } else {
     clearInterval(timerAttack);
@@ -189,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelector("#playTime").onclick = play;
   document.querySelector("#playAttack").onclick = attack;
   document.querySelector("#newAttack").onclick = newAttack;
-  document.querySelector("#halfAttack").onclick = halfAttack; 
+  document.querySelector("#halfAttack").onclick = halfAttack;
   document.querySelector("#home").innerHTML = localStorage.getItem("hscore");
   document.querySelector("#home1").onclick = hscore1;
   document.querySelector("#home2").onclick = hscore2;
