@@ -23,8 +23,8 @@ if (!localStorage.getItem("shotClock")) {
 }
 
 let periodn = localStorage.getItem("periodn");
-let min = 0;
-let sec = 05;
+let min = 9;
+let sec = 59;
 let timers = -1;
 
 function play() {
